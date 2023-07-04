@@ -1,0 +1,7 @@
+<!-- Workaround to add the homepage to the menu, see: https://github.com/alex-shpak/hugo-book/issues/541 -->
+{{ $homepage := .Site.GetPage "/" }}
+{{ $isCurrentPage := eq $homepage .Page }}
+
+<a href="{{ $homepage.RelPermalink }}" class="{{ if $isCurrentPage }}active{{ end }}">
+    {{- partial "docs/title" $homepage -}}
+</a>
