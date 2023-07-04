@@ -22,5 +22,6 @@
             "lineNumbersInTable": false
         }
     },
+    "disableLanguages": ["de"],
     "disableKinds": ["taxonomy", "taxonomyTerm"]
 }
