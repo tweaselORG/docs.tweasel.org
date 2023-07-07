@@ -20,3 +20,26 @@ footer.site-footer {
         }
     }
 }
+
+.external-link-indicator::after {
+    content: '';
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    vertical-align: -0.5px;
+    margin-left: 0.2em;
+
+    // Workaround to be able to set the color of the icon through CSS, see: https://stackoverflow.com/a/58536915
+    background: var(--color-link);
+    mask-image: url(/svg/external-link.svg);
+    mask-size: 0.8em 0.8em;
+    mask-position: bottom;
+    mask-repeat: no-repeat;
+    -webkit-mask-image: url(/svg/external-link.svg);
+    -webkit-mask-size: 0.8em 0.8em;
+    -webkit-mask-position: bottom;
+    -webkit-mask-repeat: no-repeat;
+}
+a:visited .external-link-indicator::after {
+    background: var(--color-visited-link);
+}
