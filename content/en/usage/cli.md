@@ -84,7 +84,9 @@ The detection is based on adapters for specific tracking endpoints (more on the 
 
 If you specify `-x`, we additionally display a reasoning for the assignment (`reasoning`). For each request, there is also a link to the respective adapter in our [tracker wiki](https://trackers.tweasel.org/). There, you can find more technical details about the tracking endpoint and how our decoding works.
 
+{{< hint warning >}}
 It is important to keep in mind that the adapter-based method can always only provide a lower bound: The displayed data was definitely transmitted, but it is very possible (likely, even) that more data was transmitted but not detected.
+{{< /hint >}}
 
 Therefore, you can also work with honey data and indicators. For this, you pass a list of known attributes of your device to the `detect-tracking` command as a JSON object, such as here:
 

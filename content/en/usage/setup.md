@@ -29,7 +29,8 @@ npm i cyanoacrylate
 
 If you want to work with physical devices, some manual setup is necessary, depending on the platform.
 
-The setup for Android is described in the [Android developer documentation](https://developer.android.com/studio/run/device#setting-up). On Ubuntu, the user must be a member of the `plugdev` group (`sudo usermod -aG plugdev <username>`) and `udev` rules for the device must be installed (`sudo apt install android-sdk-platform-tools-common`). Tips for other Linux distributions can be found at [`android-udev-rules`](https://github.com/M0Rf30/android-udev-rules).
+The setup for Android is described in the [Android developer documentation](https://developer.android.com/studio/run/device#setting-up). On Windows, you may need to install the correct [OEM USB driver](https://developer.android.com/studio/run/oem-usb).  
+On Ubuntu, the user must be a member of the `plugdev` group (`sudo usermod -aG plugdev <username>`) and `udev` rules for the device must be installed (`sudo apt install android-sdk-platform-tools-common`). Tips for other Linux distributions can be found at [`android-udev-rules`](https://github.com/M0Rf30/android-udev-rules).
 
 For iOS, additional setup steps are only necessary under Windows. Here, you have to install the Apple Device Driver and the Apple Application Support. You can get those by installing iTunes.
 
@@ -73,7 +74,7 @@ tweasel android-emulator:snapshot:create "<snapshot name>"
 
 ### Physical iPhones
 
-iOS devices also require a jailbreak. Our tools are tested on iOS 15 and 16 with the [palera1n jailbreak](https://github.com/palera1n/palera1n). Follow [this guide](https://ios.cfw.guide/installing-palera1n/). Important: The jailbreak must be installed in rootful mode.[^ios-14]
+iOS devices also require a jailbreak. Our tools are tested on iOS 15 and 16 with the [palera1n jailbreak](https://github.com/palera1n/palera1n).[^ios-14] Follow [this guide](https://ios.cfw.guide/installing-palera1n/). Important: The jailbreak must be installed in rootful mode.
 
 [^ios-14]: In other projects, we have previously successfully used iOS 14 with the [checkra1n jailbreak](https://checkra.in/). But since we don't have a device with iOS 14 anymore, we can't guarantee that it also works with the tweasel tools.
 

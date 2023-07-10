@@ -84,7 +84,9 @@ Die Erkennung basiert auf Adaptern für spezifische Tracking-Endpunkte (mehr zur
 
 Mit `-x` kann zusätzlich eine Begründung für die Zuordnung (`reasoning`) angezeigt werden. Bei jeder Anfrage befindet sich zudem ein Link auf den jeweiligen Adapter in unserem [Tracker-Wiki](https://trackers.tweasel.org/). Dort finden sich noch weitere technische Details zum Tracking-Endpunkt und dazu, wie unsere Dekodierung funktioniert.
 
+{{< hint warning >}}
 Wichtig zu bedenken ist, dass das adapterbasierte Verfahren immer nur eine untere Schranke liefern kann: Die angezeigten Daten wurden definitiv übertragen, aber es ist gut möglich (sogar sehr wahrscheinlich), dass weitere übertragene Daten nicht erkannt wurden.
+{{< /hint >}}
 
 Deshalb kann zusätzlich mit Honey-Data und Indikatoren gearbeitet werden. Dabei wird dem `detect-tracking`-Befehl eine Aufstellung von bekannten Attributen des Geräts mitgegeben als JSON-Objekt, wie etwa hier:
 

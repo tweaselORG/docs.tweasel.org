@@ -29,7 +29,8 @@ npm i cyanoacrylate
 
 Soll mit physischen Geräten gearbeitet werden, ist zusätzlich etwas manuelle Einrichtung nötig, abhängig von der Plattform.
 
-Die Einrichtung für Android ist in der [Android-Developer-Dokumentation](https://developer.android.com/studio/run/device#setting-up) beschrieben. Unter Ubuntu muss die Nutzer_in Mitglied der `plugdev`-Gruppe sein (`sudo usermod -aG plugdev <Nutzer_innenname>`) und es müssen `udev`-Regeln für das Gerät installiert sein (`sudo apt install android-sdk-platform-tools-common`). Tipps für andere Linux-Distributionen finden sich bei [`android-udev-rules`](https://github.com/M0Rf30/android-udev-rules).
+Die Einrichtung für Android ist in der [Android-Developer-Dokumentation](https://developer.android.com/studio/run/device#setting-up) beschrieben. Unter Windows muss ggf. der korrekte [OEM-USB-Treiber](https://developer.android.com/studio/run/oem-usb) installiert werden.  
+Unter Ubuntu muss die Nutzer_in Mitglied der `plugdev`-Gruppe sein (`sudo usermod -aG plugdev <Nutzer_innenname>`) und es müssen `udev`-Regeln für das Gerät installiert sein (`sudo apt install android-sdk-platform-tools-common`). Tipps für andere Linux-Distributionen finden sich bei [`android-udev-rules`](https://github.com/M0Rf30/android-udev-rules).
 
 Für iOS sind nur unter Windows zusätzliche Einrichtungsschritte nötig. Hier muss der Apple-Device-Driver und der Apple-Application-Support installiert werden. Diese werden zusammen mit iTunes installiert.
 
@@ -73,7 +74,7 @@ tweasel android-emulator:snapshot:create "<Name des Snapshots>"
 
 ### Physische iPhones
 
-Auch iOS-Geräte benötigen einen Jailbreak. Getestet sind unsere Tools auf iOS 15 und 16 mit dem [palera1n-Jailbreak](https://github.com/palera1n/palera1n). Dazu [dieser Anleitung](https://ios.cfw.guide/installing-palera1n/) folgen. Wichtig: Der Jailbreak muss im Rootful-Modus installiert werden.[^ios-14]
+Auch iOS-Geräte benötigen einen Jailbreak. Getestet sind unsere Tools auf iOS 15 und 16 mit dem [palera1n-Jailbreak](https://github.com/palera1n/palera1n).[^ios-14] Dazu [dieser Anleitung](https://ios.cfw.guide/installing-palera1n/) folgen. Wichtig: Der Jailbreak muss im Rootful-Modus installiert werden.
 
 [^ios-14]: In anderen Projekten haben wir früher erfolgreich iOS 14 mit dem [checkra1n-Jailbreak](https://checkra.in/) verwendet. Da wir aber kein Gerät mit iOS 14 mehr haben, können wir nicht garantieren, dass das auch mit den Tweasel-Tools funktioniert.
 
