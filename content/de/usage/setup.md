@@ -6,7 +6,7 @@
 
 ## Installation der Bibliotheken und Tools
 
-Die [Bibliotheken und Tools des Tweasel-Projekts](/) werden als NPM-Pakete bereitgestellt. Sie benötigen [Node.js](https://nodejs.org) (mindestens Version 18) und können über NPM oder Yarn installiert werden. Alle anderen Abhängigkeiten (wie z. B. das Android-SDK, Frida und pymobiledevice3) werden dadurch automatisch installiert.
+Die [Bibliotheken und Tools des Tweasel-Projekts](/) werden als NPM-Pakete bereitgestellt. Sie benötigen [Node.js](https://nodejs.org) (mindestens Version 18) und können über NPM oder Yarn installiert werden. Alle anderen Abhängigkeiten (wie z. B. das Android-SDK, Frida und `pymobiledevice3`) werden dadurch automatisch installiert.
 
 Node.js, NPM und das Tweasel-CLI können unter Ubuntu 23.04[^ubuntu-node] beispielsweise wie folgt installiert werden:
 
@@ -19,7 +19,7 @@ sudo apt install nodejs npm
 sudo npm i -g tweasel-cli
 ```
 
-Die Bibliotheken hingegen sollten lokal in einem Projekt (also ohne `-g`) installiert werden, etwa für cyanoacrylate:
+Die Bibliotheken hingegen sollten lokal in einem Projekt (also ohne `-g`) installiert werden, etwa für `cyanoacrylate`:
 
 ```sh
 npm i cyanoacrylate
