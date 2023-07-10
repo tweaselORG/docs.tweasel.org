@@ -1,7 +1,7 @@
 {
     "title": "Traffic analysis with CLI",
     "weight": 20,
-    "description": "TODO"
+    "description": "Learn how to use the tweasel command-line tool to record mobile app traffic and analyse traffic recordings in HAR format for tracking data transmissions."
 }
 
 The tweasel CLI allows you to use the features of the different tweasel libraries from the command line without having to write any code yourself.
@@ -18,6 +18,8 @@ All commands have extensive help pages that can be displayed with `--help`, for 
 tweasel --help
 tweasel record-traffic --help
 ```
+
+In addition, running `tweasel autocomplete` prints instructions on how to set up auto-completion for all commands.
 
 ## Recording traffic
 

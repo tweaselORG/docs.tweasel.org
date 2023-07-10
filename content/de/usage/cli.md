@@ -1,7 +1,7 @@
 {
     "title": "Traffic-Analyse mit dem CLI",
     "weight": 20,
-    "description": "TODO"
+    "description": "Mit dem Tweasel-Kommandozeilenwerkzeug kann der Netzwerktraffic von mobilen Apps aufgezeichnet werden und Trafficaufzeichnungen im HAR-Format können auf die Übertragung von Tracking-Daten untersucht werden."
 }
 
 Das Tweasel-CLI ermöglicht es, die Funktionen der verschiedenen Bibliotheken des Tweasel-Projekts über die Kommandozeile zu nutzen, ohne eigenen Code schreiben zu müssen.
@@ -18,6 +18,8 @@ Alle Befehle verfügen über umfangreiche Hilfeseiten, die über `--help` angeze
 tweasel --help
 tweasel record-traffic --help
 ```
+
+Der Befehl `tweasel autocomplete` erklärt darüber hinaus, wie sich eine Autovervollständigung für alle Befehle einrichten lässt.
 
 ## Traffic aufzeichnen
 
