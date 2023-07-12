@@ -255,4 +255,4 @@ If this hangs indefinitely, too, then you have the same problem. To fix the prob
 adb shell pkill -9 frida-server
 ```
 
-Alternatively, you can also manually reboot the phone. We are [considering](https://github.com/tweaselORG/appstraction/issues/102#issuecomment-1596111863) implementing an automatic fix for this in the future.
+Alternatively, you can also manually reboot the phone.
