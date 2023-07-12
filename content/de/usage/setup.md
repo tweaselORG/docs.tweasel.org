@@ -6,15 +6,16 @@
 
 ## Installation der Bibliotheken und Tools
 
-Die [Bibliotheken und Tools des Tweasel-Projekts](/) werden als NPM-Pakete bereitgestellt. Sie benötigen [Node.js](https://nodejs.org) (mindestens Version 18) und können über NPM oder Yarn installiert werden. Alle anderen Abhängigkeiten (wie z. B. das Android-SDK, Frida und `pymobiledevice3`) werden dadurch automatisch installiert.
+Die [Bibliotheken und Tools des Tweasel-Projekts](/) werden als NPM-Pakete bereitgestellt. Sie benötigen [Node.js](https://nodejs.org) (mindestens Version 18) und können über NPM oder Yarn installiert werden. Auf einigen Systemen muss außerdem `clang` installiert sein.[^clang-macos] Alle anderen Abhängigkeiten (wie z. B. das Android-SDK, Frida und `pymobiledevice3`) werden dadurch automatisch installiert.
 
 Node.js, NPM und das Tweasel-CLI können unter Ubuntu 23.04[^ubuntu-node] beispielsweise wie folgt installiert werden:
 
+[^clang-macos]: Auf macOS wird `clang` von den Xcode Kommandozeilenwerkzeugen zur Verfügung gestellt. Diese können mit `xcode-select --install` installiert werden.
 [^ubuntu-node]: Achtung: Die Paketquellen älterer Ubuntu-Versionen enthalten zu alte Versionen von Node.js. Hier muss Node.js daher auf anderem Wege installiert werden, etwa über [nvm](https://github.com/nvm-sh/nvm) oder die [NodeSource-Pakete](https://github.com/nodesource/distributions).
 
 ```sh
 sudo apt update
-sudo apt install nodejs npm
+sudo apt install nodejs npm clang
 
 sudo npm i -g tweasel-cli
 ```
@@ -42,7 +43,7 @@ Unsere Bibliotheken funktionieren mit physischen Handys und Emulatoren unter And
 | --- | --- | --- |
 | Android | `device` (Moto G7 Power) | 13 (API-Level 33) |
 | Android | `emulator` | 11 (API level 30), 13 (API-Level 33) |
-| iOS | `device` (iPhone X, iPhone 6S) | 15.6.1, 16.0 |
+| iOS | `device` (iPhone X, iPhone 6S) | 15.7.5, 16.3.1 |
 
 Je nachdem, was für ein Gerät für die Analyse verwendet werden soll, ist die unten beschriebene Vorbereitung nötig. Das Installieren und Einrichten aller weiteren Abhängigkeiten auf dem Gerät übernehmen unsere Tools automatisch.
 
@@ -52,6 +53,7 @@ Auf physischen Android-Handys muss USB-Debugging aktiviert werden. Das geht übe
 
 Für sinnvolle Trafficanalysen muss das Gerät darüber hinaus gerootet sein. Dafür empfehlen wir [Magisk](https://topjohnwu.github.io/Magisk/), für das auch der Bootloader entsperrt werden muss. Wie das geht, variiert von Gerät zu Gerät. In der Regel gehen dabei alle Daten auf dem Gerät verloren.  
 Nach dem Rooten sollte, falls verfügbar, Root-Debugging aktiviert werden: *Einstellungen* -> *System* -> *Entwickleroptionen* -> *Root-Debugging*.
+Falls Root-Debugging nicht verfügbar oder deaktiviert ist, müssen im Dialog, den Magisk auf dem Gerät öffnet, Superuser-Rechte für `com.android.shell` vergeben werden, sobald `appstraction` das erste Mal nach Root-Rechten fragt.
 
 Bei der Verbindung per USB muss bestätigt werden, dass dem Rechner vertraut wird.
 
@@ -74,7 +76,7 @@ tweasel android-emulator:snapshot:create "<Name des Snapshots>"
 
 ### Physische iPhones
 
-Auch iOS-Geräte benötigen einen Jailbreak. Getestet sind unsere Tools auf iOS 15 und 16 mit dem [palera1n-Jailbreak](https://github.com/palera1n/palera1n).[^ios-14] Dazu [dieser Anleitung](https://ios.cfw.guide/installing-palera1n/) folgen. Wichtig: Der Jailbreak muss im Rootful-Modus installiert werden.
+Auch iOS-Geräte benötigen einen Jailbreak. Getestet sind unsere Tools auf iOS 15 und 16 mit dem [palera1n-Jailbreak](https://github.com/palera1n/palera1n).[^ios-14] Dazu [dieser Anleitung](https://ios.cfw.guide/installing-palera1n/) folgen. Wichtig: Der Jailbreak muss im Rootful-Modus installiert werden. Außer für macOS empfehlen wir sehr [palen1x](https://github.com/palera1n/palen1x) zu benutzen, eine Linux Distribution speziell fürs Jailbreaken, die von einen USB-Stick gestartet werden kann.
 
 [^ios-14]: In anderen Projekten haben wir früher erfolgreich iOS 14 mit dem [checkra1n-Jailbreak](https://checkra.in/) verwendet. Da wir aber kein Gerät mit iOS 14 mehr haben, können wir nicht garantieren, dass das auch mit den Tweasel-Tools funktioniert.
 

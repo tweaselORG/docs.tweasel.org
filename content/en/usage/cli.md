@@ -49,10 +49,10 @@ If you want to start an (already existing) Android emulator, you can do that lik
 tweasel record-traffic airbnb.apk --run-target emulator --emulator-name "<name of the emulator>"
 ```
 
-For iOS, two additional arguments have to be provided, the IP address of the phone and of the computer running the tweasel CLI, for example:
+For iOS, an additional argument has to be provided, the IP address of the computer running the tweasel CLI, for example:
 
 ```sh
-tweasel record-traffic reddit.ipa --ios-ip 10.0.0.3 --ios-proxy-ip 10.0.0.2
+tweasel record-traffic reddit.ipa --ios-proxy-ip 10.0.0.2
 ```
 
 The traffic will be recorded until you press Enter. If you want to record for a fixed duration instead, you can do that with `--timeout <time in seconds>`. The recorded traffic will be saved as a HAR file in the current directory by default. You can change that with `-o`.  

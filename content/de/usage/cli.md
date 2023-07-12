@@ -49,10 +49,10 @@ Soll ein (bereits existierender) Android-Emulator gestartet werden, geht das wie
 tweasel record-traffic airbnb.apk --run-target emulator --emulator-name "<Name des Emulators>"
 ```
 
-Für iOS müssen zwei zusätzliche Argumente angegeben werden, die IP-Adresse des Handys und des Rechners, auf dem das Tweasel-CLI läuft, z. B.:
+Für iOS muss ein zusätzliches Argument angegeben werden, die IP-Adresse des Rechners, auf dem das Tweasel-CLI läuft, z. B.:
 
 ```sh
-tweasel record-traffic check24.ipa --ios-ip 10.0.0.3 --ios-proxy-ip 10.0.0.2
+tweasel record-traffic check24.ipa --ios-proxy-ip 10.0.0.2
 ```
 
 Der Traffic wird solange aufgezeichnet, bis Enter gedrückt wird. Soll stattdessen für eine feste Dauer aufgezeichnet werden, geht das mit `--timeout <Zeit in Sekunden>`. Der aufgezeichnete Traffic wird in beiden Fällen standardmäßig als HAR-Datei im aktuellen Verzeichnis gespeichert. Das kann mit `-o` angepasst werden.  

@@ -6,15 +6,15 @@
 
 ## Installing the libraries and tools
 
-The [libraries and tools of the tweasel project](/) are distributed as NPM packages. You need [Node.js](https://nodejs.org) (version 18 or greater) and you can install them via NPM or Yarn. All other dependencies (such as the Android SDK, Frida, and `pymobiledevice3`) are automatically installed.
-
+The [libraries and tools of the tweasel project](/) are distributed as NPM packages. You can install them via NPM or Yarn, if you have [Node.js](https://nodejs.org/) (version 18 or greater) installed. Also, on some systems, you need to have `clang` installed.[^clang-macos] All other dependencies (such as the Android SDK, Frida, and pymobiledevice3) are automatically installed.
 You can install Node.js, NPM, and the tweasel CLI on Ubuntu 23.04[^ubuntu-node] like this:
 
+[^clang-macos]: On macOS `clang` should be provided by the Xcode command line tools. You can get it by installing `xcode-select --install`.
 [^ubuntu-node]: Note: The repositories of older Ubuntu versions contain versions of Node.js that are too old. On these, you have to install Node.js in another way, for example via [nvm](https://github.com/nvm-sh/nvm) or the [NodeSource packages](https://github.com/nodesource/distributions).
 
 ```sh
 sudo apt update
-sudo apt install nodejs npm
+sudo apt install nodejs npm clang
 
 sudo npm i -g tweasel-cli
 ```
@@ -42,7 +42,7 @@ Our libraries work with physical phones and emulators on Android and physical ph
 | --- | --- | --- |
 | Android | `device` (Moto G7 Power) | 13 (API level 33) |
 | Android | `emulator` | 11 (API level 30), 13 (API level 33) |
-| iOS | `device` (iPhone X, iPhone 6S) | 15.6.1, 16.0 |
+| iOS | `device` (iPhone X, iPhone 6S) | 15.7.5, 16.3.1 |
 
 Depending on what kind of device you want to use for the analysis, the preparation steps described below are necessary. Installing and setting up all other dependencies on the device is done automatically by our tools.
 
@@ -52,6 +52,7 @@ On physical Android phones, USB debugging must be enabled. This can be done via 
 
 To be able to do traffic analysis in a meaningful way, the device needs to be rooted. For this, we recommend [Magisk](https://topjohnwu.github.io/Magisk/). To use that, you also have to unlock the bootloader. The instructions for that vary from device to device. Usually, all data on the device is lost in the process.  
 After rooting, root debugging should be enabled if available: *Settings* -> *System* -> *Developer options* -> *Rooted debugging*.
+If rooted debugging is not available or not activated, you will be prompted by Magisk to grant `com.android.shell` superuser privileges when `appstraction` tries to use root the first time.
 
 When connecting via USB, you have to confirm that you trust the computer.
 
@@ -74,7 +75,7 @@ tweasel android-emulator:snapshot:create "<snapshot name>"
 
 ### Physical iPhones
 
-iOS devices also require a jailbreak. Our tools are tested on iOS 15 and 16 with the [palera1n jailbreak](https://github.com/palera1n/palera1n).[^ios-14] Follow [this guide](https://ios.cfw.guide/installing-palera1n/). Important: The jailbreak must be installed in rootful mode.
+iOS devices also require a jailbreak. Our tools are tested on iOS 15 and 16 with the [palera1n jailbreak](https://github.com/palera1n/palera1n).[^ios-14] Follow [this guide](https://ios.cfw.guide/installing-palera1n/). Important: The jailbreak must be installed in rootful mode. We strongly recommend to use [palen1x](https://github.com/palera1n/palen1x), which is a Linux distribution for jailbreaking you can boot from a USB Stick, if you are using anything other than macOS.
 
 [^ios-14]: In other projects, we have previously successfully used iOS 14 with the [checkra1n jailbreak](https://checkra.in/). But since we don't have a device with iOS 14 anymore, we can't guarantee that it also works with the tweasel tools.
 
