@@ -220,16 +220,16 @@ In large-scale analyses with `appstraction` or `cyanoacrylate`, we have sometime
 		        ^
 
 
-Error: Command failed with exit code 224: /home/benni/.cache/andromatic/platform-tools/adb shell am broadcast -a com.wireguard.android.action.SET_TUNNEL_UP -n 'com.wireguard.android/.model.TunnelManager$IntentReceiver' -e tunnel appstraction
+Error: Command failed with exit code 224: /home/<user>/.cache/andromatic/platform-tools/adb shell am broadcast -a com.wireguard.android.action.SET_TUNNEL_UP -n 'com.wireguard.android/.model.TunnelManager$IntentReceiver' -e tunnel appstraction
 Broadcasting: Intent { act=com.wireguard.android.action.SET_TUNNEL_UP flg=0x400000 cmp=com.wireguard.android/.model.TunnelManager$IntentReceiver (has extras) }
 cmd: Failure calling service activity: Broken pipe (32)
     at makeError (~/appstraction-test/node_modules/execa/lib/error.js:59:11)
     at handlePromise (~/appstraction-test/node_modules/execa/index.js:124:26)
     at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
     at Object.setProxy (~/appstraction-test/node_modules/appstraction/dist/index.js:1026:17) {
-  shortMessage: "Command failed with exit code 224: /home/benni/.cache/andromatic/platform-tools/adb shell am broadcast -a com.wireguard.android.action.SET_TUNNEL_UP -n 'com.wireguard.android/.model.TunnelManager$IntentReceiver' -e tunnel appstraction",
-  command: "/home/benni/.cache/andromatic/platform-tools/adb shell am broadcast -a com.wireguard.android.action.SET_TUNNEL_UP -n 'com.wireguard.android/.model.TunnelManager$IntentReceiver' -e tunnel appstraction",
-  escapedCommand: `"/home/benni/.cache/andromatic/platform-tools/adb" shell am broadcast -a com.wireguard.android.action.SET_TUNNEL_UP -n "'com.wireguard.android/.model.TunnelManager$IntentReceiver'" -e tunnel appstraction`,
+  shortMessage: "Command failed with exit code 224: /home/<user>/.cache/andromatic/platform-tools/adb shell am broadcast -a com.wireguard.android.action.SET_TUNNEL_UP -n 'com.wireguard.android/.model.TunnelManager$IntentReceiver' -e tunnel appstraction",
+  command: "/home/<user>/.cache/andromatic/platform-tools/adb shell am broadcast -a com.wireguard.android.action.SET_TUNNEL_UP -n 'com.wireguard.android/.model.TunnelManager$IntentReceiver' -e tunnel appstraction",
+  escapedCommand: `"/home/<user>/.cache/andromatic/platform-tools/adb" shell am broadcast -a com.wireguard.android.action.SET_TUNNEL_UP -n "'com.wireguard.android/.model.TunnelManager$IntentReceiver'" -e tunnel appstraction`,
   exitCode: 224,
   signal: undefined,
   signalDescription: undefined,
