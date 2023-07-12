@@ -75,7 +75,7 @@ Der `detect-tracking`-Befehl hilft, übertragene Daten an Trackingunternehmen in
 tweasel detect-tracking "<Pfad zur HAR-Datei>"
 ```
 
-Die Erkennung basiert auf Adaptern für spezifische Tracking-Endpunkte (mehr zur Methodik in der [README von TrackHAR](https://github.com/tweaselORG/TrackHAR)). Angezeigt wird für jede Anfrage in der HAR-Datei, für die ein Adapter vorhanden war, eine Tabelle der erkannten übertragenen Daten. Dabei sind die folgenden Angaben für jedes Datum:
+Die Erkennung basiert auf Adaptern für spezifische Tracking-Endpunkte (mehr zur Methodik in der [README von TrackHAR](https://github.com/tweaselORG/TrackHAR)). Für jede Anfrage in der HAR-Datei, für die ein Adapter vorhanden war, wird eine Tabelle der erkannten übertragenen Daten angezeigt. Dabei sind die folgenden Angaben für jedes Datum:
 
 * `property`: um welchen Datentyp es sich handelt (z. B. `idfa`: Werbe-ID des Handys, `osName`: Name des Betriebssystems, `appVersion`: Version der App)
 * `context`: Teil der Anfrage, in dem das Datum gefunden wurde (z. B. Header, Body)
@@ -88,7 +88,7 @@ Mit `-x` kann zusätzlich eine Begründung für die Zuordnung (`reasoning`) ange
 Wichtig zu bedenken ist, dass das adapterbasierte Verfahren immer nur eine untere Schranke liefern kann: Die angezeigten Daten wurden definitiv übertragen, aber es ist gut möglich (sogar sehr wahrscheinlich), dass weitere übertragene Daten nicht erkannt wurden.
 {{< /hint >}}
 
-Deshalb kann zusätzlich mit Honey-Data und Indikatoren gearbeitet werden. Dabei wird dem `detect-tracking`-Befehl eine Aufstellung von bekannten Attributen des Geräts mitgegeben als JSON-Objekt, wie etwa hier:
+Deshalb kann zusätzlich mit Honey-Data und Indikatoren gearbeitet werden. Dabei wird dem `detect-tracking`-Befehl eine Aufstellung von bekannten Attributen des Geräts als JSON-Objekt mitgegeben, wie etwa hier:
 
 ```sh
 tweasel detect-tracking "<Pfad zur HAR-Datei>" --indicators '{ "localIp": ["10.0.0.2", "fd31:4159::a2a1"], "idfa": "6a1c1487-a0af-4223-b142-a0f4621d0311" }'
@@ -98,7 +98,7 @@ Hier wurden die lokalen IP-Adressen des Handys und die Werbe-ID angegeben. In de
 
 Aber auch hierbei ist zu beachten, dass immer noch Daten übersehen werden können.
 
-Die Bezeichnungen für die Werte (im Beispiel `localIp` und `idfa` können frei gewählt werden). Statt das JSON-Objekt direkt im Befehl anzugeben, kann auch eine JSON-Datei mit den Indikatoren angelegt und deren Pfad übergeben werden:
+Die Bezeichnungen für die Werte (im Beispiel `localIp` und `idfa`) können frei gewählt werden. Statt das JSON-Objekt direkt im Befehl anzugeben, kann auch eine JSON-Datei mit den Indikatoren angelegt und deren Pfad übergeben werden:
 
 ```sh
 tweasel detect-tracking "<Pfad zur HAR-Datei>" --indicators "<Pfad zur JSON-Datei>"

@@ -50,14 +50,14 @@ Je nachdem, was für ein Gerät für die Analyse verwendet werden soll, ist die 
 
 Auf physischen Android-Handys muss USB-Debugging aktiviert werden. Das geht über *Einstellungen* -> *System* -> *Entwickleroptionen* (zum Aktivieren sieben Mal auf die *Build-Nummer* unter *Einstellungen* -> *Über das Telefon* -> *Android-Version* tippen) -> *USB-Debugging*.
 
-Für sinnvolle Trafficanalysen muss das Gerät darüber hinaus gerootet sein. Dafür empfehlen wir [Magisk](https://topjohnwu.github.io/Magisk/). Dafür muss auch der Bootloader entsperrt werden. Wie das geht, variiert von Gerät zu Gerät. In der Regel gehen dabei alle Daten auf dem Gerät verloren.  
+Für sinnvolle Trafficanalysen muss das Gerät darüber hinaus gerootet sein. Dafür empfehlen wir [Magisk](https://topjohnwu.github.io/Magisk/), für das auch der Bootloader entsperrt werden muss. Wie das geht, variiert von Gerät zu Gerät. In der Regel gehen dabei alle Daten auf dem Gerät verloren.  
 Nach dem Rooten sollte, falls verfügbar, Root-Debugging aktiviert werden: *Einstellungen* -> *System* -> *Entwickleroptionen* -> *Root-Debugging*.
 
 Bei der Verbindung per USB muss bestätigt werden, dass dem Rechner vertraut wird.
 
 ### Android-Emulator
 
-Zur Nutzung eines Android-Emulators ist keine besondere Einrichtung nötig. Es muss nur ein Emulator erstellt werden. Das geht über den Device Manager von [Android Studio](https://developer.android.com/studio) oder über das Tweasel-CLI, es empfiehlt sich dabei, einen größeren Speicherplatz einzustellen:
+Zur Nutzung eines Android-Emulators ist keine besondere Einrichtung nötig. Es muss nur ein Emulator erstellt werden. Das geht über den Device Manager von [Android Studio](https://developer.android.com/studio) oder über das Tweasel-CLI (wir empfehlen, dabei einen größeren Speicherplatz einzustellen):
 
 ```sh
 tweasel android-emulator:create "<Name des Emulators>" --partition-size 16384
@@ -98,3 +98,6 @@ Zur optimalen Nutzung (insbesondere zur Reduzierung von Hintergrundtraffic des S
     * Automatic Downloads
         * Apps: aus
         * App Updates: aus
+ * Accessibility
+    * Touch
+        * AssistiveTouch: an

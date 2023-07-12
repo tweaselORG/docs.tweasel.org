@@ -57,7 +57,7 @@ When connecting via USB, you have to confirm that you trust the computer.
 
 ### Android emulator
 
-No special setup is required to use an Android emulator. You just have to create an emulator. This can be done through the [Android Studio](https://developer.android.com/studio) Device Manager or via the tweasel CLI, we recommended you configure larger storage space:
+No special setup is required to use an Android emulator. You just have to create an emulator. This can be done through the [Android Studio](https://developer.android.com/studio) Device Manager or via the tweasel CLI (we recommended you configure larger storage space):
 
 ```sh
 tweasel android-emulator:create "<emulator name>" --partition-size 16384
@@ -98,3 +98,6 @@ For optimal use (especially to reduce background traffic of the system and other
     * Automatic Downloads
         * Apps: off
         * App Updates: off
+* Accessibility
+    * Touch
+        * AssistiveTouch: on
