@@ -43,7 +43,7 @@ Unsere Bibliotheken funktionieren mit physischen Handys und Emulatoren unter And
 | --- | --- | --- |
 | Android | `device` (Moto G7 Power) | 13 (API-Level 33) |
 | Android | `emulator` | 11 (API level 30), 13 (API-Level 33) |
-| iOS | `device` (iPhone X, iPhone 6S) | 15.7.5, 16.3.1 |
+| iOS | `device` (iPhone X, iPhone 6S) | 15.6.1, 15.7.5, 16.0, 16.3.1 |
 
 Je nachdem, was für ein Gerät für die Analyse verwendet werden soll, ist die unten beschriebene Vorbereitung nötig. Das Installieren und Einrichten aller weiteren Abhängigkeiten auf dem Gerät übernehmen unsere Tools automatisch.
 
@@ -76,7 +76,7 @@ tweasel android-emulator:snapshot:create "<Name des Snapshots>"
 
 ### Physische iPhones
 
-Auch iOS-Geräte benötigen einen Jailbreak. Getestet sind unsere Tools auf iOS 15 und 16 mit dem [palera1n-Jailbreak](https://github.com/palera1n/palera1n).[^ios-14] Dazu [dieser Anleitung](https://ios.cfw.guide/installing-palera1n/) folgen. Wichtig: Der Jailbreak muss im Rootful-Modus installiert werden. Außer für macOS empfehlen wir sehr [palen1x](https://github.com/palera1n/palen1x) zu benutzen, eine Linux Distribution speziell fürs Jailbreaken, die von einen USB-Stick gestartet werden kann.
+Auch iOS-Geräte benötigen einen Jailbreak. Getestet sind unsere Tools auf iOS 15 und 16 mit dem [palera1n-Jailbreak](https://github.com/palera1n/palera1n).[^ios-14] Dazu [dieser Anleitung](https://ios.cfw.guide/installing-palera1n/) folgen. Wichtig: Der Jailbreak muss im Rootful-Modus installiert werden. Außer für macOS empfehlen wir sehr [palen1x](https://github.com/palera1n/palen1x) zu benutzen, eine Linux-Distribution speziell fürs Jailbreaken, die von einen USB-Stick gestartet werden kann.
 
 [^ios-14]: In anderen Projekten haben wir früher erfolgreich iOS 14 mit dem [checkra1n-Jailbreak](https://checkra.in/) verwendet. Da wir aber kein Gerät mit iOS 14 mehr haben, können wir nicht garantieren, dass das auch mit den Tweasel-Tools funktioniert.
 

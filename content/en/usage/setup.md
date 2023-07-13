@@ -42,7 +42,7 @@ Our libraries work with physical phones and emulators on Android and physical ph
 | --- | --- | --- |
 | Android | `device` (Moto G7 Power) | 13 (API level 33) |
 | Android | `emulator` | 11 (API level 30), 13 (API level 33) |
-| iOS | `device` (iPhone X, iPhone 6S) | 15.7.5, 16.3.1 |
+| iOS | `device` (iPhone X, iPhone 6S) | 15.6.1, 15.7.5, 16.0, 16.3.1 |
 
 Depending on what kind of device you want to use for the analysis, the preparation steps described below are necessary. Installing and setting up all other dependencies on the device is done automatically by our tools.
 
