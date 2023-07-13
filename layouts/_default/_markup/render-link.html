@@ -1,0 +1,15 @@
+{{ $internalPrefixes := slice "/" "#" "mailto:" }}
+{{ $internalDomains := slice "tweasel.org" "datenanfragen.de" "datarequests.org" "dacdn.de" "localhost" }}
+
+{{ $host := (urls.Parse .Destination).Hostname }}
+
+{{ $isInternalLink := false }}
+{{ range $prefix := $internalPrefixes }}
+    {{ $isInternalLink = or $isInternalLink (strings.HasPrefix $.Destination $prefix) }}
+{{ end }}
+{{ range $domain := $internalDomains }}
+    {{ $isInternalLink = or $isInternalLink (eq $host $domain) (strings.HasSuffix $host (printf ".%s" $domain)) }}
+{{ end }}
+
+<a href="{{ .Destination | safeURL }}"{{ with .Title }} title="{{ . }}"{{ end }}>{{ .Text | safeHTML }}{{ if not $isInternalLink }}<span class="external-link-indicator" title="external link"></span>{{ end }}</a>
+{{- /* We don't want the trailing newline of this file to cause a space to be printed after each link. This prevents that. */ -}}

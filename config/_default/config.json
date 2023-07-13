@@ -1,0 +1,27 @@
+{
+    "baseURL": "/",
+    "defaultContentLanguage": "en",
+    "enableGitInfo": true,
+    "module": {
+        "imports": [
+            {
+                "path": "github.com/alex-shpak/hugo-book"
+            }
+        ]
+    },
+    "params": {
+        "BookSection": "*",
+        "BookTheme": "auto",
+        "BookRepo": "https://github.com/tweaselORG/docs.tweasel.org",
+        "BookEditPath": "edit/main"
+    },
+    "markup": {
+        "highlight": {
+            "style": "base16-snazzy",
+            "lineNos": true,
+            "lineNumbersInTable": false
+        }
+    },
+    "disableLanguages": ["de"],
+    "disableKinds": ["taxonomy", "taxonomyTerm"]
+}
