@@ -16,8 +16,7 @@ jobs:
       - run:
           command: |
             sudo npm i -g dattel-client
-            yarn
-            yarn build
+            hugo --baseURL 'https://docs.tweasel.org' --minify
             dattel deploy
 workflows:
   build_and_deploy:
