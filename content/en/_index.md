@@ -5,7 +5,7 @@
 
 Tweasel is a project building infrastructure for detecting and complaining about tracking and privacy violations in mobile apps on Android and iOS.
 
-As part of this project, we developed a tool suite for automated app analysis and tracking detections. This documentation will explain how the tools work, how you can recreate and verify the results without the tools and how to use and install them. This page should give you an overview of the tools and their capabilities. You can find the code for all our projects [on GitHub](https://github.com/orgs/tweaselORG/repositories).
+As part of this project, we developed a tool suite for automated app analysis and tracking detections. This documentation will explain how the tools work, how you can recreate and verify the results without the tools, and how to use and install them. This page should give you an overview of the tools and their capabilities. You can find the code for all our projects [on GitHub](https://github.com/orgs/tweaselORG/repositories). If you want to follow along with the development, have a look at our [devlog](https://www.datarequests.org/devlog). You can also join our [Matrix room](https://matrix.to/#/#dade-tweasel:matrix.altpeter.me) to get in touch.
 
 The project is run by a privacy-focused non-profit, Datenanfragen.de e.&thinsp;V., who also runs the website [datarequests.org](https://www.datarequests.org), among others. It [receives funds](https://nlnet.nl/project/TrackingWeasel/) from the Zero Entrust fund in the European Commission's Next Generation Internet program via the NLnet foundation.
 
@@ -40,3 +40,9 @@ The [tweasel CLI](https://github.com/tweaselORG/cli) is a commandline utility th
 ## parse-tunes/parse-play
 
 [parse-tunes](https://github.com/tweaselORG/parse-tunes) and [parse-play](https://github.com/baltpeter/parse-play) are two libraries to parse data from the Apple App Store and the Google Play Store, respectively. You can use it to get the app ranking charts or access the privacy information app developers provided to the store.
+
+## Open request database
+
+We regularly run large-scale traffic analyses on mobile apps. We are using this data for example to maintain the tracking endpoint adapters of TrackHAR. We want our conclusion there to be replicable by others. In addition, we want to enable as many people as possible to do their own research into trackers.
+
+As such, we are publishing our datasets as open data at [data.tweasel.org](https://data.tweasel.org) for other researchers, activists, journalists, and anyone else who is interested in understanding the inner workings of trackers. The data is published as a Datasette instance, which allows you to interactively explore the full data online, including running arbitrary SQL queries against it.
