@@ -6,15 +6,14 @@
 
 ## Installing the libraries and tools
 
-The [libraries and tools of the tweasel project](/) are distributed as NPM packages. You can install them via NPM or Yarn, if you have [Node.js](https://nodejs.org/) (version 18 or greater) installed. Also, on some systems, you need to have `clang` installed.[^clang-macos] All other dependencies (such as the Android SDK, Frida, and pymobiledevice3) are automatically installed.
+The [libraries and tools of the tweasel project](/) are distributed as NPM packages. You can install them via NPM or Yarn, if you have [Node.js](https://nodejs.org/) (we need version 18) installed. All other dependencies (such as the Android SDK, Frida, and pymobiledevice3) are automatically installed.
 You can install Node.js, NPM, and the tweasel CLI on Ubuntu 23.04[^ubuntu-node] like this:
 
-[^clang-macos]: On macOS `clang` should be provided by the Xcode command line tools. You can get it by installing `xcode-select --install`.
-[^ubuntu-node]: Note: The repositories of older Ubuntu versions contain versions of Node.js that are too old. On these, you have to install Node.js in another way, for example via [nvm](https://github.com/nvm-sh/nvm) or the [NodeSource packages](https://github.com/nodesource/distributions).
+[^ubuntu-node]: Note: The repositories of other Ubuntu versions may contain versions of Node.js that are too old or too new. On these, you have to install Node.js in another way, for example via [nvm](https://github.com/nvm-sh/nvm) or the [NodeSource packages](https://github.com/nodesource/distributions).
 
 ```sh
 sudo apt update
-sudo apt install nodejs npm clang
+sudo apt install nodejs npm
 
 sudo npm i -g tweasel-cli
 ```
@@ -36,11 +35,11 @@ For iOS, additional setup steps are only necessary under Windows. Here, you have
 
 ## Device preparation
 
-Our libraries work with physical phones and emulators on Android and physical phones on iOS. We test with the following target (but other versions may also work):
+Our libraries work with physical phones and emulators on Android and physical phones on iOS. We test with the following targets (but other versions may also work):
 
 | Platform | Type | Tested versions |
 | --- | --- | --- |
-| Android | `device` (Moto G7 Power) | 13 (API level 33) |
+| Android | `device` (Moto G7 Power) | 13 (API level 33, LineageOS) |
 | Android | `emulator` | 11 (API level 30), 13 (API level 33) |
 | iOS | `device` (iPhone X, iPhone 6S) | 15.6.1, 15.7.5, 16.0, 16.3.1 |
 
