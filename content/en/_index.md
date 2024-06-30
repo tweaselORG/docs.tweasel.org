@@ -33,6 +33,12 @@ It is also written as a library. For each analysis, you need to write a custom s
 - Adapter-based parsing, which uses so-called adapters written for specfic types of requests (e.g. requests that go to a specific endpoint). These adapters define algorithms to decode the request, which are often encoded with serveral nested encodings, and match up the decoded content with pre-defined categories of data to identify which data was transmitted. The adapters are documented in [the tracker wiki](https://trackers.tweasel.org).
 - Indicator matching, which searches for given strings – indicators – in the requests to identify honey data that had been previously placed on the device. TrackHAR uses this as a fallback if no adapters are available to match a request. Currently, it also supports matching base64- or URL-encoded indicators as well.
 
+## ReportHAR
+
+[ReportHAR](https://github.com/tweaselORG/ReportHAR) is a library for generating technical reports, notices, and GDPR complaints concerning tracking by mobile apps. All documents are generated as PDF files using Typst. The templates are translatable.
+
+ReportHAR doesn't perform any analyses itself. Instead, it relies on the output and rich metadata from `cyanoacrylate` and `TrackHAR`.
+
 ## CLI
 
 The [tweasel CLI](https://github.com/tweaselORG/cli) is a commandline utility that combines `TrackHAR`, `cyanoacrylate`, and other utilities to create a single tool for manual mobile tracking analysis. It provides an interface to start and automate traffic recording, manage Android emulators and detect tracking in the recorded requests. If you want to get started with the project, the CLI is a good place to try out the tools.
@@ -46,3 +52,7 @@ The [tweasel CLI](https://github.com/tweaselORG/cli) is a commandline utility th
 We regularly run large-scale traffic analyses on mobile apps. We are using this data for example to maintain the tracking endpoint adapters of TrackHAR. We want our conclusion there to be replicable by others. In addition, we want to enable as many people as possible to do their own research into trackers.
 
 As such, we are publishing our datasets as open data at [data.tweasel.org](https://data.tweasel.org) for other researchers, activists, journalists, and anyone else who is interested in understanding the inner workings of trackers. The data is published as a Datasette instance, which allows you to interactively explore the full data online, including running arbitrary SQL queries against it.
+
+## Platform
+
+The platform will lie at the heart of the project, providing an accessible web interface for end users, allowing them to analyse Android and iOS apps for data protection violations and send complaints to the data protection authorities without having to set up a complicated analysis environment or interpret the results themselves. We will be launching the platform soon. The [code](https://github.com/tweaselORG/platform) is already available. The actual analyses will be performed by an [analysis runner](https://github.com/tweaselORG/analysis-runner-local).
