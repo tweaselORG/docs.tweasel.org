@@ -13,6 +13,7 @@ Tweasel is run and maintained by [Datenanfragen.de e. V.](https://www.datareques
 
 With Tweasel, we are tackling the broader ecosystem of online tracking that has become pervasive across the web and mobile apps. Extensive research, including our own, has again and again revealed ubiquitous violations of and a prevalent disregard for data protection law in this context. The vast amounts of personal data collected through such tracking activities are fed into an opaque and shadowy system consisting of thousands of companies, posing very real dangers to users.
 
+Tweasel was [funded by the NLnet Foundation in the NGI0 Entrust Fund](https://nlnet.nl/project/TrackingWeasel/) from January 2023 to June 2024. Decisions on the direction of the project are taken by the board of the non-profit, or ultimately, its members.
 ## Development
 
 On the [docs homepage]({{< ref "/" >}}), you can find an overview of and introduction to the most important project components and packages that we maintain. Our development happens on [GitHub](https://github.com/orgs/tweaselORG). There you can find a [full list of all repositories](https://github.com/orgs/tweaselORG/repositories?type=all).
