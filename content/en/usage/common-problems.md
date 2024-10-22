@@ -256,3 +256,33 @@ adb shell pkill -9 frida-server
 ```
 
 Alternatively, you can also manually reboot the phone.
+
+## `Emulator failed to start: Command was killed with SIGSEGV (Segmentation fault)` in headless mode (`-no-window`) in `cyanoacrylate`
+
+This might be caused by a bug in the Android emulator’s hardware acceleration. [In the case we encountered](https://github.com/tweaselORG/cyanoacrylate/issues/53), the emulator still starts without problems if `headless` is set to `false`. You can try to resolve the problem by disabling hardware acceleration (see also [the `-accel` option of the Android emulator](https://developer.android.com/studio/run/emulator-commandline#common)):
+
+```js
+{
+    startEmulatorOptions: {
+        emulatorName: '<your-emulator>',
+        headless: true,
+        hardwareAcceleration: {
+            mode: 'off',
+        },
+    },
+}
+```
+
+Alternatively, if you want to keep hardware acceleration, you can try different options for the GPU acceleration to find what works for you (take a look at [the `-gpu` option of the Android emulator](https://developer.android.com/studio/run/emulator-acceleration#accel-graphics)):
+
+```js
+{
+    startEmulatorOptions: {
+        emulatorName: '<your-emulator>',
+        headless: true,
+        hardwareAcceleration: {
+            gpuMode: 'host',
+        },
+    },
+}
+```
